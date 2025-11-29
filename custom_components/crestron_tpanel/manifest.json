@@ -3,7 +3,8 @@
   "name": "Crestron Touch Panel",
   "codeowners": ["@adamjs83"],
   "config_flow": true,
-  "documentation": "https://github.com/adamjs83/hassio",
+  "documentation": "https://gitea.ajsventures.us/adamjs83/crestron_tpanel",
+  "issue_tracker": "https://gitea.ajsventures.us/adamjs83/crestron_tpanel/issues",
   "iot_class": "local_polling",
   "requirements": ["asyncssh==2.14.2"],
   "version": "1.0.0"
