@@ -1,0 +1,24 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Crestron Touch Panel",
+        "description": "Set up a Crestron touch panel for brightness and power control.",
+        "data": {
+          "name": "Display Name",
+          "host": "IP Address",
+          "username": "Username",
+          "password": "Password",
+          "port": "SSH Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the panel. Check IP, username, and password.",
+      "unknown": "Unexpected error occurred."
+    },
+    "abort": {
+      "already_configured": "This panel is already configured."
+    }
+  }
+}
