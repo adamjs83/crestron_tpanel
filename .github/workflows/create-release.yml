@@ -1,8 +1,9 @@
-name: Release
+name: Create Release
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   release:
@@ -24,7 +25,22 @@ jobs:
           cd custom_components
           zip -r ../crestron_tpanel.zip crestron_tpanel
 
-      - name: Upload release asset
+      - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: crestron_tpanel.zip
+          generate_release_notes: true
+          body: |
+            ## Crestron Touch Panel v${{ steps.get_version.outputs.version }}
+            
+            ### Installation
+            
+            **HACS (Recommended):**
+            1. Add this repository as a custom repository in HACS
+            2. Search for "Crestron Touch Panel" and install
+            3. Restart Home Assistant
+            
+            **Manual:**
+            1. Download `crestron_tpanel.zip`
+            2. Extract to `config/custom_components/`
+            3. Restart Home Assistant
